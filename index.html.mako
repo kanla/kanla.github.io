@@ -35,7 +35,7 @@
       when you don’t know
       how to use it?
       kanla comes with
-      excellent documentation
+      <a href="/docs/">excellent documentation</a>
       and example configuration.
       </p>
 

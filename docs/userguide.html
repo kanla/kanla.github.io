@@ -1,0 +1,1235 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="generator" content="AsciiDoc 8.6.7"><title>The kanla User Guide</title><style type="text/css">
+/* Shared CSS for AsciiDoc xhtml11 and html5 backends */
+
+/* Default font. */
+body {
+  font-family: Georgia,serif;
+}
+
+/* Title font. */
+h1, h2, h3, h4, h5, h6,
+div.title, caption.title,
+thead, p.table.header,
+#toctitle,
+#author, #revnumber, #revdate, #revremark,
+#footer {
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+  color: navy;
+}
+
+strong {
+  font-weight: bold;
+  color: #083194;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  padding-top: 0.5em;
+}
+h3 {
+  float: left;
+}
+h3 + * {
+  clear: left;
+}
+h5 {
+  font-size: 1.0em;
+}
+
+div.sectionbody {
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ul, ol, li > p {
+  margin-top: 0;
+}
+ul > li     { color: #aaa; }
+ul > li > * { color: black; }
+
+pre {
+  padding: 0;
+  margin: 0;
+}
+
+#author {
+  color: #527bbd;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+#email {
+}
+#revnumber, #revdate, #revremark {
+}
+
+#footer {
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+#preamble {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.0em;
+  margin-bottom: 2.0em;
+  margin-right: 10%;
+  color: #606060;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  color: #527bbd;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #f0f0f0;
+  padding: 0.5em;
+}
+
+div.listingblock > div.content {
+  border: 1px solid #dddddd;
+  border-left: 5px solid #f0f0f0;
+  background: #f8f8f8;
+  padding: 0.5em;
+}
+
+div.quoteblock, div.verseblock {
+  padding-left: 1.0em;
+  margin-left: 1.0em;
+  margin-right: 10%;
+  border-left: 5px solid #f0f0f0;
+  color: #888;
+}
+
+div.quoteblock > div.attribution {
+  padding-top: 0.5em;
+  text-align: right;
+}
+
+div.verseblock > pre.content {
+  font-family: inherit;
+  font-size: inherit;
+}
+div.verseblock > div.attribution {
+  padding-top: 0.75em;
+  text-align: left;
+}
+/* DEPRECATED: Pre version 8.2.7 verse style literal block. */
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 3px solid #dddddd;
+}
+
+div.exampleblock > div.content {
+  border-left: 3px solid #dddddd;
+  padding-left: 0.5em;
+}
+
+div.imageblock div.content { padding-left: 0; }
+span.image img { border-style: none; }
+a.image:visited { color: white; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: normal;
+  color: navy;
+}
+dd > *:first-child {
+  margin-top: 0.1em;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.arabic {
+  list-style-type: decimal;
+}
+ol.loweralpha {
+  list-style-type: lower-alpha;
+}
+ol.upperalpha {
+  list-style-type: upper-alpha;
+}
+ol.lowerroman {
+  list-style-type: lower-roman;
+}
+ol.upperroman {
+  list-style-type: upper-roman;
+}
+
+div.compact ul, div.compact ol,
+div.compact p, div.compact p,
+div.compact div, div.compact div {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+tfoot {
+  font-weight: bold;
+}
+td > div.verse {
+  white-space: pre;
+}
+
+div.hdlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hdlist tr {
+  padding-bottom: 15px;
+}
+dt.hdlist1.strong, td.hdlist1.strong {
+  font-weight: bold;
+}
+td.hdlist1 {
+  vertical-align: top;
+  font-style: normal;
+  padding-right: 0.8em;
+  color: navy;
+}
+td.hdlist2 {
+  vertical-align: top;
+}
+div.hdlist.compact tr {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.comment {
+  background: yellow;
+}
+
+.footnote, .footnoteref {
+  font-size: 0.8em;
+}
+
+span.footnote, span.footnoteref {
+  vertical-align: super;
+}
+
+#footnotes {
+  margin: 20px 0 20px 0;
+  padding: 7px 0 0 0;
+}
+
+#footnotes div.footnote {
+  margin: 0 0 5px 0;
+}
+
+#footnotes hr {
+  border: none;
+  border-top: 1px solid silver;
+  height: 1px;
+  text-align: left;
+  margin-left: 0;
+  width: 20%;
+  min-width: 100px;
+}
+
+div.colist td {
+  padding-right: 0.5em;
+  padding-bottom: 0.3em;
+  vertical-align: top;
+}
+div.colist td img {
+  margin-top: 0.3em;
+}
+
+@media print {
+  #footer-badges { display: none; }
+}
+
+#toc {
+  margin-bottom: 2.5em;
+}
+
+#toctitle {
+  color: #527bbd;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel0, div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+
+span.aqua { color: aqua; }
+span.black { color: black; }
+span.blue { color: blue; }
+span.fuchsia { color: fuchsia; }
+span.gray { color: gray; }
+span.green { color: green; }
+span.lime { color: lime; }
+span.maroon { color: maroon; }
+span.navy { color: navy; }
+span.olive { color: olive; }
+span.purple { color: purple; }
+span.red { color: red; }
+span.silver { color: silver; }
+span.teal { color: teal; }
+span.white { color: white; }
+span.yellow { color: yellow; }
+
+span.aqua-background { background: aqua; }
+span.black-background { background: black; }
+span.blue-background { background: blue; }
+span.fuchsia-background { background: fuchsia; }
+span.gray-background { background: gray; }
+span.green-background { background: green; }
+span.lime-background { background: lime; }
+span.maroon-background { background: maroon; }
+span.navy-background { background: navy; }
+span.olive-background { background: olive; }
+span.purple-background { background: purple; }
+span.red-background { background: red; }
+span.silver-background { background: silver; }
+span.teal-background { background: teal; }
+span.white-background { background: white; }
+span.yellow-background { background: yellow; }
+
+span.big { font-size: 2em; }
+span.small { font-size: 0.6em; }
+
+span.underline { text-decoration: underline; }
+span.overline { text-decoration: overline; }
+span.line-through { text-decoration: line-through; }
+
+div.unbreakable { page-break-inside: avoid; }
+
+
+/*
+ * xhtml11 specific
+ *
+ * */
+
+tt {
+  font-family: "Courier New", Courier, monospace;
+  font-size: inherit;
+  color: navy;
+}
+
+div.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead, p.table.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.table {
+  margin-top: 0;
+}
+/* Because the table frame attribute is overriden by CSS in most browsers. */
+div.tableblock > table[frame="void"] {
+  border-style: none;
+}
+div.tableblock > table[frame="hsides"] {
+  border-left-style: none;
+  border-right-style: none;
+}
+div.tableblock > table[frame="vsides"] {
+  border-top-style: none;
+  border-bottom-style: none;
+}
+
+
+/*
+ * html5 specific
+ *
+ * */
+
+.monospaced {
+  font-family: "Courier New", Courier, monospace;
+  font-size: inherit;
+  color: navy;
+}
+
+table.tableblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+thead, p.tableblock.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+p.tableblock {
+  margin-top: 0;
+}
+table.tableblock {
+  border-width: 3px;
+  border-spacing: 0px;
+  border-style: solid;
+  border-color: #527bbd;
+  border-collapse: collapse;
+}
+th.tableblock, td.tableblock {
+  border-width: 1px;
+  padding: 4px;
+  border-style: solid;
+  border-color: #527bbd;
+}
+
+table.tableblock.frame-topbot {
+  border-left-style: hidden;
+  border-right-style: hidden;
+}
+table.tableblock.frame-sides {
+  border-top-style: hidden;
+  border-bottom-style: hidden;
+}
+table.tableblock.frame-none {
+  border-style: hidden;
+}
+
+th.tableblock.halign-left, td.tableblock.halign-left {
+  text-align: left;
+}
+th.tableblock.halign-center, td.tableblock.halign-center {
+  text-align: center;
+}
+th.tableblock.halign-right, td.tableblock.halign-right {
+  text-align: right;
+}
+
+th.tableblock.valign-top, td.tableblock.valign-top {
+  vertical-align: top;
+}
+th.tableblock.valign-middle, td.tableblock.valign-middle {
+  vertical-align: middle;
+}
+th.tableblock.valign-bottom, td.tableblock.valign-bottom {
+  vertical-align: bottom;
+}
+
+
+/*
+ * manpage specific
+ *
+ * */
+
+body.manpage h1 {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-top: 2px solid silver;
+  border-bottom: 2px solid silver;
+}
+body.manpage h2 {
+  border-style: none;
+}
+body.manpage div.sectionbody {
+  margin-left: 3em;
+}
+
+@media print {
+  body.manpage div#toc { display: none; }
+}
+@media screen {
+  body {
+    max-width: 50em; /* approximately 80 characters wide */
+    margin-left: 16em;
+  }
+
+  #toc {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 13em;
+    padding: 0.5em;
+    padding-bottom: 1.5em;
+    margin: 0;
+    overflow: auto;
+    border-right: 3px solid #f8f8f8;
+    background-color: white;
+  }
+
+  #toc .toclevel1 {
+    margin-top: 0.5em;
+  }
+
+  #toc .toclevel2 {
+    margin-top: 0.25em;
+    display: list-item;
+    color: #aaaaaa;
+  }
+
+  #toctitle {
+    margin-top: 0.5em;
+  }
+}
+ul.toc {
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 0;
+}
+
+ul.toc ul.toc {
+	padding-left: 0.5em;
+}
+</style></head><body class="article"><div id="header"><a class="bctarget" name="header"></a>
+<h1>The kanla User Guide</h1>
+<span id="author"><a class="bctarget" name="author"></a>Michael Stapelberg</span><br>
+<span id="email" class="monospaced"><a class="bctarget" name="email"></a>&lt;<a href="mailto:michael+kanla@stapelberg.de">michael+kanla@stapelberg.de</a>&gt;</span><br>
+<span id="revdate"><a class="bctarget" name="revdate"></a>October 2012</span>
+<div id="toc"><a class="bctarget" name="toc"></a>
+  <div id="toctitle"><a class="bctarget" name="toctitle"></a>Table of Contents</div>
+  <!--begin-toc-->
+<ul class="toc">
+<li><a href="#_introduction">1. Introduction</a>
+ <ul class="toc">
+ <li><a href="#_terminology">1.1. Terminology</a>
+ </ul>
+<li><a href="#_installation">2. Installation</a>
+ <ul class="toc">
+ <li><a href="#_locations">2.1. Locations</a>
+ </ul>
+<li><a href="#_configuration">3. Configuration</a>
+ <ul class="toc">
+ <li><a href="#_quick_example">3.1. Quick example</a>
+ <li><a href="#_jabber_configuration">3.2. Jabber configuration</a>
+ <li><a href="#_main_configuration">3.3. Main configuration</a>
+  <ul class="toc">
+  <li><a href="#_send_alerts_to">3.3.1. send_alerts_to</a>
+  </ul>
+ <li><a href="#_plugin_configuration">3.4. Plugin configuration</a>
+ <li><a href="#_plugin_http">3.5. Plugin: http</a>
+  <ul class="toc">
+  <li><a href="#_url">3.5.1. URL</a>
+  <li><a href="#_family">3.5.2. Family</a>
+  </ul>
+ <li><a href="#_plugin_smtp">3.6. Plugin: smtp</a>
+  <ul class="toc">
+  <li><a href="#_host">3.6.1. Host</a>
+  <li><a href="#_family_2">3.6.2. Family</a>
+  <li><a href="#_timeout">3.6.3. Timeout</a>
+  </ul>
+ <li><a href="#_plugin_irc">3.7. Plugin: irc</a>
+  <ul class="toc">
+  <li><a href="#_ircd">3.7.1. ircd</a>
+  <li><a href="#_family_3">3.7.2. Family</a>
+  <li><a href="#_timeout_2">3.7.3. Timeout</a>
+  </ul>
+ <li><a href="#_plugin_git">3.8. Plugin: git</a>
+  <ul class="toc">
+  <li><a href="#_url_2">3.8.1. url</a>
+  <li><a href="#_family_4">3.8.2. Family</a>
+  <li><a href="#_timeout_3">3.8.3. Timeout</a>
+  </ul>
+ </ul>
+<li><a href="#_config_recipes">4. Config recipes</a>
+ <ul class="toc">
+ <li><a href="#_variables">4.1. Variables</a>
+ </ul>
+<li><a href="#_technical_details">5. Technical details</a>
+ <ul class="toc">
+ <li><a href="#_message_receipts">5.1. Message receipts</a>
+ <li><a href="#_jabber_presences">5.2. Jabber presences</a>
+ <li><a href="#_writing_plugins">5.3. Writing plugins</a>
+ <li><a href="#_plugin_interface">5.4. Plugin interface</a>
+ </ul></ul>
+<!--end-toc-->
+</div>
+</div><div id="content"><a class="bctarget" name="content"></a>
+<div id="preamble"><a class="bctarget" name="preamble"></a>
+<div class="sectionbody">
+<div class="paragraph"><p>kanla is a daemon which peridiocally checks
+whether your website, mail server, etc.
+are still up and running.</p></div>
+<div class="paragraph"><p>In case a health check fails,
+kanla will notify you
+via jabber (XMPP).</p></div>
+<div class="paragraph"><p>Focus of kanla lies on
+being light-weight,
+being simple,
+using a sane configuration file,
+being well-documented.</p></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_introduction"><a class="bctarget" name="_introduction"></a>1. Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Many people run personal websites
+or websites of their pet projects.
+Except for professional sysadmins,
+none of those I asked
+ran any kind of software to notify them about failures.
+Since nobody disagreed with me about the idea being helpful,
+this suggests that existing software is too complex,
+complicated to setup,
+under-documented
+or for some other reason undesirable.</p></div>
+<div class="paragraph"><p>I myself wanted to be notified&#8201;&#8212;&#8201;by software, not by users&#8201;&#8212;&#8201;when <a href="http://i3wm.org">http://i3wm.org</a> is not reachable anymore.
+However, the software I looked at
+could not be configured to verify the actual page contents
+(as opposed to only the HTTP status)
+and did not even support IPv6
+(come on, it’s 2012).</p></div>
+<div class="paragraph"><p>My conclusion was that writing a simple program myself
+would be faster than trying to re-implement plugins
+for existing monitoring/alerting software
+in such a way that I’d be happy with them.</p></div>
+<div class="paragraph"><p>kanla is the fruit of this effort.
+It is intentionally simple
+and focuses on small-scale alerting.
+This means it will <strong>NOT</strong> generate uptime statistics,
+or execute certain actions when some condition is met,
+or handle pager alerts and on-call schedules.
+Instead, it verifies what you describe
+and whenever something is wrong,
+it sends you a message via jabber (XMPP).</p></div>
+<div class="sect2">
+<h3 id="_terminology"><a class="bctarget" name="_terminology"></a>1.1. Terminology</h3>
+<div class="dlist"><dl><dt class="hdlist1">
+kanla instance
+</dt><dd>
+<p>
+        A process of the <span class="monospaced">kanla</span> binary,
+        running with precisely one configuration.
+        You can have multiple instances running
+        and each instance usually has several plugins running.
+</p>
+</dd><dt class="hdlist1">
+plugin
+</dt><dd>
+<p>
+        A small program which verifies that things are good.
+        For example, the "http" plugin
+        retrieves websites and verifies their content.
+        If anything goes wrong
+        you will get an alert.
+</p>
+</dd><dt class="hdlist1">
+alert
+</dt><dd>
+<p>
+        The message which kanla sends to you when things go wrong.
+</p>
+</dd></dl></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_installation"><a class="bctarget" name="_installation"></a>2. Installation</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>To install kanla,
+you should by all means
+use your distribution’s package management system.</p></div>
+<div class="paragraph"><p>It is intentional
+that there is no instruction for installing from source.</p></div>
+<div class="paragraph"><p>If there is no package for your distribution,
+consider making one.
+The Debian packaging serves as reference packaging.</p></div>
+<div class="sect2">
+<h3 id="_locations"><a class="bctarget" name="_locations"></a>2.1. Locations</h3>
+<div class="paragraph"><p>kanla itself should be installed as <span class="monospaced">/usr/bin/kanla</span>.</p></div>
+<div class="paragraph"><p>Plugins reside in <span class="monospaced">/usr/share/perl5/auto/share/dist/kanla/</span>
+(or whereever your perl installation places dist folders).
+A plugin is just an executable file
+(implemented in any language, but preferably Perl)
+which produces output in a certain format on stderr
+when things go wrong.
+Plugins are identified by their file name,
+e.g. "http".</p></div>
+<div class="paragraph"><p>Configuration files are placed in <span class="monospaced">/etc/kanla/</span>
+with the default configuration file being named <span class="monospaced">default.cfg</span>.
+This file&#8201;&#8212;&#8201;by default&#8201;&#8212;&#8201;includes every <span class="monospaced">.cfg</span> file in <span class="monospaced">/etc/kanla/default.d/</span>
+which is where you will find example configurations
+for every plugin.</p></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuration"><a class="bctarget" name="_configuration"></a>3. Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>The main kanla configuration file is called <span class="monospaced">/etc/kanla/default.cfg</span>.
+It contains the jabber (XMPP) account configuration,
+the default alert destination (e.g. your jabber id)
+and includes <span class="monospaced">/etc/kanla/default.d/*.cfg</span>.</p></div>
+<div class="paragraph"><p>After modifying the jabber (XMPP) account configuration,
+you need to enable at least one plugin
+by removing the comment signs (<span class="monospaced">#</span>)
+in front of every line of its configuration file.
+The provided files serve as a minimum useful example
+(while this documentation poses a reference)
+and will not change often
+so you can modify them
+without being bothered by config file conflicts on upgrades.</p></div>
+<div class="paragraph"><p>It goes without saying that configuration files are encoded as UTF-8
+and UTF-8 is supported throughout kanla.</p></div>
+<div class="sect2">
+<h3 id="_quick_example"><a class="bctarget" name="_quick_example"></a>3.1. Quick example</h3>
+<div class="paragraph"><p><strong>A minimum useful kanla configuration</strong>:</p></div>
+<div class="listingblock">
+<div class="content monospaced">
+<pre>&lt;jabber&gt;
+    jid      = "kanla@example.com"
+    password = "kV9eJ4LZ9KRYOCec5W2witq"
+&lt;/jabber&gt;
+
+send_alerts_to = &lt;&lt;EOT
+michael@example.com
+EOT
+
+&lt;monitor i3wm website&gt;
+    plugin = http
+    url    = "http://www.i3wm.org/"
+    url    = "http://i3wm.org/"
+&lt;/monitor&gt;</pre>
+</div></div>
+</div>
+<div class="sect2">
+<h3 id="_jabber_configuration"><a class="bctarget" name="_jabber_configuration"></a>3.2. Jabber configuration</h3>
+<div class="paragraph"><p>Jabber configuration is done with one (or multiple) jabber block(s).
+Each block needs to have at least the jid and password attribute.
+The following attributes can be configured:</p></div>
+<div class="dlist"><dl><dt class="hdlist1">
+jid
+</dt><dd>
+<p>
+    The jabber id of this account,
+    e.g. <span class="monospaced">kanla@example.com</span>.
+</p>
+</dd><dt class="hdlist1">
+password
+</dt><dd>
+<p>
+    The password for this account.
+</p>
+</dd><dt class="hdlist1">
+host
+</dt><dd>
+<p>
+    The hostname of the jabber server
+    to which to connect to.
+    It is normally <strong>NOT</strong> necessary to specify this,
+    but some networks actively break SRV record resolution.
+</p>
+</dd><dt class="hdlist1">
+port
+</dt><dd>
+<p>
+    The port of the jabber server, if non-standard.
+</p>
+</dd></dl></div>
+<div class="paragraph"><p><strong>Simple jabber example</strong>:</p></div>
+<div class="listingblock">
+<div class="content monospaced">
+<pre>&lt;jabber&gt;
+    jid      = "kanla@example.com"
+    password = "kV9eJ4LZ9KRYOCec5W2witq"
+&lt;/jabber&gt;</pre>
+</div></div>
+<div class="paragraph"><p><strong>Complex jabber example</strong>:</p></div>
+<div class="listingblock">
+<div class="content monospaced">
+<pre>&lt;jabber&gt;
+    jid      = "kanla@example.com"
+    password = "kV9eJ4LZ9KRYOCec5W2witq"
+&lt;/jabber&gt;
+
+&lt;jabber&gt;
+    jid      = "kanla@example.net"
+    password = "kV9eJ4LZ9KRYOCec5W2witq"
+    host     = "jabber.example.net"
+    port     = 5222
+&lt;/jabber&gt;</pre>
+</div></div>
+<div class="paragraph"><p>There is no default value for this option,
+therefore <strong>you have to configure this</strong>.</p></div>
+<div class="admonitionblock">
+<table><tbody><tr><td class="icon">
+<img src="/etc/asciidoc/images/icons//note.png" alt="Note">
+</td><td class="content">kanla will send an
+<a href="http://xmpp.org/extensions/xep-0199.html">XEP-0199</a> ping to the server
+every 60 seconds.
+If the server does not reply within 60 seconds,
+the connection is considered dead
+and will be reconnected.</td></tr></tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_main_configuration"><a class="bctarget" name="_main_configuration"></a>3.3. Main configuration</h3>
+<div class="sect3">
+<h4 id="_send_alerts_to"><a class="bctarget" name="_send_alerts_to"></a>3.3.1. send_alerts_to</h4>
+<div class="paragraph" id="send_alerts_to"><a class="bctarget" name="send_alerts_to"></a><p>A list of jabber ids (line-separated)
+to which alerts will be sent.
+This can be overwritten on a per-plugin basis.
+Please use the heredoc syntax,
+otherwise extending this list
+will not work
+(a limitation of the <a href="http://metacpan.org/module/Config::General">Config::General</a> module).</p></div>
+<div class="paragraph"><p><strong>send_alerts_to example</strong>:</p></div>
+<div class="listingblock">
+<div class="content monospaced">
+<pre>send_alerts_to = &lt;&lt;EOT
+michael@example.com
+stefan@example.com
+EOT</pre>
+</div></div>
+<div class="paragraph"><p>There is no default value for this option,
+therefore <strong>you have to configure this</strong>.</p></div>
+<div class="admonitionblock">
+<table><tbody><tr><td class="icon">
+<img src="/etc/asciidoc/images/icons//note.png" alt="Note">
+</td><td class="content">
+<div class="paragraph"><p>In order to maximize redundancy,
+you can (and should) use multiple jabber ids.
+Of course, they should not use the same infrastructure,
+so use two different jabber servers
+and clients (if possible).</p></div>
+<div class="paragraph"><p>In case you are using Android,
+consider using Google Talk (built-in)
+and Xabber
+(supports <a href="http://xmpp.org/extensions/xep-0184.html">XEP-0184</a> message receipts)
+with a non-google account.</p></div>
+</td></tr></tbody></table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_plugin_configuration"><a class="bctarget" name="_plugin_configuration"></a>3.4. Plugin configuration</h3>
+<div class="paragraph"><p>There are some configuration directives which are valid for every plugin.
+These directives are:</p></div>
+<div class="dlist"><dl><dt class="hdlist1">
+plugin
+</dt><dd>
+<p>
+    Specifies which plugin should be used.
+    This is simply the base filename of the plugin,
+    e.g. "http".
+</p>
+</dd><dt class="hdlist1">
+send_alerts_to
+</dt><dd>
+<p>
+    Overwrites the main configuration’s send_alerts_to
+    for this plugin,
+    see <a href="#send_alerts_to">[send_alerts_to]</a>.
+    Using variables, you can also amend instead of overwrite,
+    see <a href="#variables">[variables]</a>.
+</p>
+</dd><dt class="hdlist1">
+interval
+</dt><dd>
+<p>
+    Controls how often the plugin verifies that things are good.
+    This configuration directive is merely a convention,
+    that is, plugins don’t <strong>have to</strong> use it
+    (e.g. in case the plugin needs a more detailed interval configuration),
+    but it is strongly recommended.
+</p>
+</dd></dl></div>
+</div>
+<div class="sect2">
+<h3 id="_plugin_http"><a class="bctarget" name="_plugin_http"></a>3.5. Plugin: http</h3>
+<div class="paragraph"><p>The http plugin periodically retrieves the specified URL(s)
+and sends alerts if the HTTP status is not 200
+or anything else went wrong during retrieval.</p></div>
+<div class="sect3">
+<h4 id="_url"><a class="bctarget" name="_url"></a>3.5.1. URL</h4>
+<div class="paragraph"><p>The URL of the site to retrieve.
+This can be anything which the
+<a href="http://metacpan.org/module/AnyEvent::HTTP">AnyEvent::HTTP</a> module accepts.</p></div>
+<div class="paragraph"><p>You can specify this configuration directive multiple times.</p></div>
+<div class="paragraph"><p><strong>Full URL example</strong>:</p></div>
+<div class="listingblock">
+<div class="content monospaced">
+<pre>&lt;monitor i3wm website&gt;
+    plugin = http
+    url    = "http://www.i3wm.org/"
+&lt;/monitor&gt;</pre>
+</div></div>
+<div class="paragraph"><p>There is no default value for this option,
+therefore <strong>you have to configure this</strong>.</p></div>
+</div>
+<div class="sect3">
+<h4 id="_family"><a class="bctarget" name="_family"></a>3.5.2. Family</h4>
+<div class="paragraph" id="http-family"><a class="bctarget" name="http-family"></a><p>The address family
+(IPv4, IPv6 or both)
+which should be used when retrieving the URL(s).</p></div>
+<div class="paragraph"><p>The default is to try both IPv4 and IPv6.</p></div>
+<div class="paragraph"><p><strong>Full family example</strong>:</p></div>
+<div class="listingblock">
+<div class="content monospaced">
+<pre>&lt;monitor i3wm website&gt;
+    plugin = http
+    family = ipv4 | ipv6
+    url    = "http://www.i3wm.org/"
+&lt;/monitor&gt;
+
+&lt;monitor slashdot&gt;
+    plugin = http
+    # slashdot doesn’t even support IPv6…
+    family = ipv4
+    url    = "http://slashdot.org/"
+&lt;/monitor&gt;</pre>
+</div></div>
+<div class="admonitionblock">
+<table><tbody><tr><td class="icon">
+<img src="/etc/asciidoc/images/icons//note.png" alt="Note">
+</td><td class="content">The absence of a AAAA DNS record is treated as an error
+(to catch DNS misconfiguration problems).
+Therefore, if your site is IPv4-only,
+you need to explicitly configure that.
+This is intentional&#8201;&#8212;&#8201;it’s 2012,
+your site should really be dual-stacked by now.</td></tr></tbody></table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_plugin_smtp"><a class="bctarget" name="_plugin_smtp"></a>3.6. Plugin: smtp</h3>
+<div class="paragraph"><p>The smtp plugin periodically connects to an SMTP server
+and sends alerts
+if the server does not send the SMTP greeting
+(220 …)
+within 10 seconds after connecting
+or anything else went wrong on the DNS/TCP level.</p></div>
+<div class="sect3">
+<h4 id="_host"><a class="bctarget" name="_host"></a>3.6.1. Host</h4>
+<div class="paragraph"><p>The host
+(may include a port)
+of the smtp server to check.
+Every syntax which
+<a href="https://metacpan.org/module/AnyEvent::Socket">AnyEvent::Socket</a>’s
+parse_hostport function understands is accepted
+(this covers all common IPv4 and IPv6 formats).</p></div>
+<div class="paragraph"><p>You can specify this configuration directive multiple times.</p></div>
+<div class="paragraph"><p><strong>Full Host example</strong>:</p></div>
+<div class="listingblock">
+<div class="content monospaced">
+<pre>&lt;monitor i3 smtp&gt;
+    plugin = smtp
+    host   = infra.in.zekjur.net
+&lt;/monitor&gt;
+
+&lt;monitor i3 smtp&gt;
+    plugin = smtp
+    family = ipv6
+    host   = "[2001:4d88:100e:1::2]:submission"
+&lt;/monitor&gt;</pre>
+</div></div>
+</div>
+<div class="sect3">
+<h4 id="_family_2"><a class="bctarget" name="_family_2"></a>3.6.2. Family</h4>
+<div class="paragraph"><p>See <a href="#http-family">[http-family]</a>.</p></div>
+</div>
+<div class="sect3">
+<h4 id="_timeout"><a class="bctarget" name="_timeout"></a>3.6.3. Timeout</h4>
+<div class="paragraph" id="smtp-timeout"><a class="bctarget" name="smtp-timeout"></a><p>The timeout (in seconds) for
+each connection attempt (via TCP)
+and for receiving the greeting.</p></div>
+<div class="paragraph"><p>The default value is a timeout 10 seconds.
+This means it is okay if the TCP connection
+can be established after 9 seconds
+and the SMTP greeting is read after another 9 seconds.</p></div>
+<div class="paragraph"><p><strong>Full timeout example</strong>:</p></div>
+<div class="listingblock">
+<div class="content monospaced">
+<pre>&lt;monitor i3 smtp&gt;
+    plugin   = smtp
+
+    # Gee, we could really use some newer hardware.
+    # Until then, cut the server some slack:
+    # Check only every 5 minutes,
+    # wait up to 60 seconds for connections
+    # and for reading the greeting.
+    timeout  = 60
+    interval = 300
+
+    host     = infra.in.zekjur.net
+&lt;/monitor&gt;</pre>
+</div></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_plugin_irc"><a class="bctarget" name="_plugin_irc"></a>3.7. Plugin: irc</h3>
+<div class="paragraph"><p>The irc plugin periodically logs onto an IRC network
+and sends alerts
+if the server does not let you log in properly
+(it looks for the "001" IRC message)
+or anything else went wrong on the DNS/TCP level.</p></div>
+<div class="sect3">
+<h4 id="_ircd"><a class="bctarget" name="_ircd"></a>3.7.1. ircd</h4>
+<div class="paragraph"><p>The host
+(may include a port)
+of the IRC server to check.
+Every syntax which
+<a href="https://metacpan.org/module/AnyEvent::Socket">AnyEvent::Socket</a>’s
+parse_hostport function understands is accepted
+(this covers all common IPv4 and IPv6 formats).</p></div>
+<div class="paragraph"><p><strong>Full ircd example</strong>:</p></div>
+<div class="listingblock">
+<div class="content monospaced">
+<pre>&lt;monitor TWiCEiRC&gt;
+    plugin = irc
+    ircd   = irc.twice-irc.de
+&lt;/monitor&gt;</pre>
+</div></div>
+</div>
+<div class="sect3">
+<h4 id="_family_3"><a class="bctarget" name="_family_3"></a>3.7.2. Family</h4>
+<div class="paragraph"><p>See <a href="#http-family">[http-family]</a>.</p></div>
+</div>
+<div class="sect3">
+<h4 id="_timeout_2"><a class="bctarget" name="_timeout_2"></a>3.7.3. Timeout</h4>
+<div class="paragraph"><p>See <a href="#smtp-timeout">[smtp-timeout]</a>.</p></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_plugin_git"><a class="bctarget" name="_plugin_git"></a>3.8. Plugin: git</h3>
+<div class="paragraph"><p>The git plugin periodically checks
+whether the specified git URL
+works correctly
+(by receiving the current HEAD revision)
+and sends alerts
+if anything comes back which does not look like a git HEAD revision
+or anything else went wrong on the DNS/TCP level.</p></div>
+<div class="sect3">
+<h4 id="_url_2"><a class="bctarget" name="_url_2"></a>3.8.1. url</h4>
+<div class="paragraph"><p>A git URL
+of the git-daemon to check.
+Every syntax which
+<a href="https://metacpan.org/module/AnyEvent::Socket">AnyEvent::Socket</a>’s
+parse_hostport function understands is accepted
+(this covers all common IPv4 and IPv6 formats).</p></div>
+<div class="paragraph"><p><strong>Full url example</strong>:</p></div>
+<div class="listingblock">
+<div class="content monospaced">
+<pre>&lt;monitor i3 git&gt;
+    plugin = git
+    url    = git://code.i3wm.org/i3
+&lt;/monitor&gt;</pre>
+</div></div>
+</div>
+<div class="sect3">
+<h4 id="_family_4"><a class="bctarget" name="_family_4"></a>3.8.2. Family</h4>
+<div class="paragraph"><p>See <a href="#http-family">[http-family]</a>.</p></div>
+</div>
+<div class="sect3">
+<h4 id="_timeout_3"><a class="bctarget" name="_timeout_3"></a>3.8.3. Timeout</h4>
+<div class="paragraph"><p>See <a href="#smtp-timeout">[smtp-timeout]</a>.</p></div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_config_recipes"><a class="bctarget" name="_config_recipes"></a>4. Config recipes</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_variables"><a class="bctarget" name="_variables"></a>4.1. Variables</h3>
+<div class="paragraph" id="variables"><a class="bctarget" name="variables"></a><p>When configuring many hosts which are alike,
+variables might come in handy.
+kanla enables <a href="http://metacpan.org/module/Config::General::Interpolated">Config::General::Interpolated</a>,
+so you can use variables
+by refering to configuration directives
+with a dollar sign prefixed,
+e.g. <span class="monospaced">$send_alerts_to</span> evaluates to the contents
+of the send_alerts_to directive.</p></div>
+<div class="paragraph"><p>You are not confined to the directives which actually exist,
+but you can use any key/value pair you want.
+To avoid troubles, you should prefix your own directives with an underscore.
+kanla will never implement directives starting with an underscore.</p></div>
+<div class="paragraph"><p><strong>Amending send_alerts_to</strong>:</p></div>
+<div class="listingblock">
+<div class="content monospaced">
+<pre># michael@example.com gets ALL the alerts!
+send_alerts_to = &lt;&lt;EOT
+michael@example.com
+EOT
+
+&lt;monitor i3wm website&gt;
+    plugin         = http
+    url            = "http://www.i3wm.org/"
+
+    # Additionally, alert stefan@example.com.
+    send_alerts_to = &lt;&lt;EOT
+    $send_alerts_to
+    stefan@example.com
+    EOT
+&lt;/monitor&gt;</pre>
+</div></div>
+<div class="paragraph"><p><strong>Monitor multiple trac instances</strong> (<span class="monospaced">/etc/kanla/default.cfg</span>):</p></div>
+<div class="listingblock">
+<div class="content monospaced">
+<pre>_trac_url = "bugs.i3wm.org"
+include "default.d/http-trac.cfg"
+
+_trac_url = "trac.edgewall.org"
+include "default.d/http-trac.cfg"</pre>
+</div></div>
+<div class="paragraph"><p><strong>Monitor multiple trac instances</strong> (<span class="monospaced">/etc/kanla/default.d/http-trac.cfg</span>):</p></div>
+<div class="listingblock">
+<div class="content monospaced">
+<pre>&lt;monitor trac at $_trac_url&gt;
+    plugin = http
+    url    = $_trac_url
+# TODO: content matching
+&lt;/monitor&gt;</pre>
+</div></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_technical_details"><a class="bctarget" name="_technical_details"></a>5. Technical details</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_message_receipts"><a class="bctarget" name="_message_receipts"></a>5.1. Message receipts</h3>
+<div class="paragraph"><p>kanla supports jabber’s <a href="http://xmpp.org/extensions/xep-0184.html">XEP-0184</a> message receipts.
+With message receipts,
+delivery of a message is confirmed end-to-end,
+that is, kanla can be sure your device received its message.
+More importantly, when your device does not confirm the message,
+kanla will retry (after 30 seconds) to send the message,
+until your device confirms the message.</p></div>
+<div class="paragraph"><p>You will immediately notice this feature
+when you configure multiple jabber accounts.
+In that case, kanla will try to deliver alerts
+using one jabber account first,
+and if that fails, it retries with the second one.
+In case you have more than two accounts,
+this is repeated until
+your device confirmed the message or
+there are no accounts left.</p></div>
+<div class="paragraph"><p>For <span class="monospaced">send_alerts_to</span> destinations which do not support XEP-0184,
+kanla will immediately send alerts from all jabber accounts.
+This leads to a storm of alerts on your device,
+but this is intended to keep things simple.
+Lobby your jabber client vendor to implement XEP-0184,
+it’s simple enough.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_jabber_presences"><a class="bctarget" name="_jabber_presences"></a>5.2. Jabber presences</h3>
+<div class="paragraph"><p>Let’s assume you configure <span class="monospaced">michael@example.com</span> via <span class="monospaced">send_alerts_to</span>
+and you are connected as <span class="monospaced">michael@example.com</span>
+on your computer
+and on your smartphone.
+Jabber calls each of these connections a presence.</p></div>
+<div class="paragraph"><p>When sending an alert to <span class="monospaced">michael@example.com</span>,
+kanla will chose the presence with the highest priority.
+In case multiple presences have the same priority,
+one of them will be arbitrarily chosen.</p></div>
+<div class="paragraph"><p>By changing the priority in your jabber client(s),
+you can therefore influence where alerts should go.</p></div>
+</div>
+<div class="sect2">
+<h3 id="_writing_plugins"><a class="bctarget" name="_writing_plugins"></a>5.3. Writing plugins</h3>
+</div>
+<div class="sect2">
+<h3 id="_plugin_interface"><a class="bctarget" name="_plugin_interface"></a>5.4. Plugin interface</h3>
+</div>
+</div>
+</div>
+</div><div id="footer"><a class="bctarget" name="footer"></a>
+<div id="footer-text"><a class="bctarget" name="footer-text"></a>
+Last updated 2012-10-29 13:52:46 CET
+</div>
+</div></body></html>

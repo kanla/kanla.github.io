@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf8">
-  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <title>kanla — the simple, well-documented alerting software</title>
   <style type="text/css">
       /* Custom container */
