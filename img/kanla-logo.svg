@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="203.79912"
+   height="120"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="kanla-logo.svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="150.08831"
+     inkscape:cy="-27.053"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1175"
+     inkscape:window-height="1091"
+     inkscape:window-x="1600"
+     inkscape:window-y="90"
+     inkscape:window-maximized="0"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-236.96804,-260.69626)">
+    <g
+       id="g3870"
+       transform="translate(0,-4)">
+      <path
+         sodipodi:nodetypes="ssscsssss"
+         inkscape:connector-curvature="0"
+         id="path3776"
+         d="m 240,313.79075 c 9.93985,-20.68506 35.09423,-31.43512 56.78572,-38.92856 26.27204,-9.07581 56.01959,-11.10515 83.21428,-5.35715 12.08642,2.55465 55.35714,15.71429 55.35714,15.71429 l -22.5,1.42857 c 0,0 -48.51445,-8.84532 -72.85714,-7.14286 -15.15078,1.0596 -30.62867,4.06942 -44.28571,10.71428 -20.73106,10.08675 -33.18133,52.13747 -54.28572,42.85715 C 235.5277,330.48166 237.20802,319.60093 240,313.79075 z"
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         sodipodi:nodetypes="sssssssssssss"
+         inkscape:connector-curvature="0"
+         id="path3778"
+         d="m 254.28571,326.6479 c 2.76975,-10.09167 13.19524,-2.6924 25.40271,3.0764 11.32375,5.35119 24.18083,8.75122 33.88301,9.06645 13.93291,0.4527 28.5723,-0.32471 41.42857,-5.71428 12.76703,-5.35216 26.47701,-12.22156 36.45602,-22.5051 8.00937,-8.2538 13.51896,-16.07319 22.82969,-23.20919 6.86843,-5.26416 24.0637,-4.9234 25.71429,3.57143 2.07655,10.68703 -8.50896,14.29312 -17.57244,20.43779 -18.37439,12.45708 -47.15377,22.01926 -68.14185,28.84792 -14.80192,4.81594 -30.96254,6.75845 -46.42857,5 -11.11587,-1.26385 -23.76208,-2.69512 -36.78894,-5.70297 -6.08575,-1.40517 -23.4678,-1.53993 -30.64602,-7.57059 -1.40915,-1.18388 13.25112,-3.06653 13.86353,-5.29786 z"
+         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         transform="translate(-1.7857143,-5)"
+         d="m 367.85715,315.39789 c 0,16.66716 -14.79059,30.17857 -33.03571,30.17857 -18.24512,0 -33.03571,-13.51141 -33.03571,-30.17857 0,-16.66717 14.79059,-30.17857 33.03571,-30.17857 18.24512,0 33.03571,13.5114 33.03571,30.17857 z"
+         sodipodi:ry="30.178572"
+         sodipodi:rx="33.035713"
+         sodipodi:cy="315.39789"
+         sodipodi:cx="334.82144"
+         id="path3780"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:4.34200001;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         sodipodi:type="arc" />
+      <path
+         transform="matrix(1.2241659,0,0,1.2241659,-72.687812,-70.236452)"
+         d="m 339.99999,310.93362 c 0,4.14214 -3.83756,7.5 -8.57143,7.5 -4.73387,0 -8.57143,-3.35786 -8.57143,-7.5 0,-4.14213 3.83756,-7.5 8.57143,-7.5 4.73387,0 8.57143,3.35787 8.57143,7.5 z"
+         sodipodi:ry="7.5"
+         sodipodi:rx="8.5714283"
+         sodipodi:cy="310.93362"
+         sodipodi:cx="331.42856"
+         id="path3782"
+         style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:4.34200001;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         sodipodi:type="arc" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Union;-inkscape-font-specification:Union"
+       x="278.53067"
+       y="376.22751"
+       id="text3866"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3868"
+         x="278.53067"
+         y="376.22751"
+         style="font-size:48px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;letter-spacing:-3px;font-family:Linux Biolinum;-inkscape-font-specification:Linux Biolinum Bold">kanla</tspan></text>
+  </g>
+</svg>
