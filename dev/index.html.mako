@@ -8,8 +8,15 @@
 
       <p>
       kanla is hosted
-      on Github:
-      http://github.com/kanla/kanla
+      on GitHub:
+      <a href="https://github.com/kanla/kanla">https://github.com/kanla/kanla</a>
+      </p>
+
+      <p>
+      In case GitHub is down,
+      there is a mirror of the git repository
+      located at
+      <a href="http://code.stapelberg.de/git/kanla">http://code.stapelberg.de/git/kanla</a>
       </p>
     </div>
   </div>
