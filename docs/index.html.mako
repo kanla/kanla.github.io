@@ -11,7 +11,7 @@
       are for the latest stable version
       of kanla,
       which is
-      v0.1.
+      v1.1.
       </p>
 
       <h4><a href="/docs/userguide.html">kanla User Guide</a></h4>
@@ -34,6 +34,22 @@
       improvements
       to kanla,
       please read this document.
+      </p>
+
+      <h4><a href="/docs/installing-rhel.html">Installing kanla on RHEL</a></h4>
+      <p>
+      Installing kanla
+      on RHEL
+      and other RPM-based
+      Linux distributions.
+      </p>
+
+      <h4><a href="/docs/installing-wheezy.html">Installing kanla on Debian</a></h4>
+      <p>
+      Installing kanla
+      on Debian 7.0 wheezy
+      and other deb-based
+      Linux distributions.
       </p>
     </div>
   </div>
