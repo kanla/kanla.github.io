@@ -24,5 +24,12 @@
       located at
       <a href="http://code.stapelberg.de/git/kanla">http://code.stapelberg.de/git/kanla</a>
       </p>
+
+      <p>
+      In case you are looking for
+      a release tarball to use
+      for distribution packages,
+      see <a href="/downloads/">/downloads/</a>
+      </p>
     </div>
   </div>
