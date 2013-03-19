@@ -13,6 +13,12 @@
       </p>
 
       <p>
+      Before sending a pull request,
+      please read
+      <a href="/docs/contributions.html">docs/contributions</a>
+      </p>
+
+      <p>
       In case GitHub is down,
       there is a mirror of the git repository
       located at
