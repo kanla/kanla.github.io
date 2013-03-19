@@ -73,7 +73,7 @@
   <hr>
 
   <footer>
-  © 2012 Michael Stapelberg, <a href="/impress.html">Impressum</a>
+  © 2012-2013 Michael Stapelberg, <a href="/impress.html">Impressum</a>
   </footer>
 </div>
 </body>
