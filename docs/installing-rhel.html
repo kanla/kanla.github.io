@@ -628,10 +628,12 @@ before continuing.</p></div>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content monospaced">
-<pre>wget http://kanla.zekjur.net/downloads/rpm/perl-AnyEvent-XMPP-0.54-2.el6.noarch.rpm
+<pre>wget http://kanla.zekjur.net/downloads/rpm/perl-AnyEvent-HTTP-2.15-1.el6.noarch.rpm
+wget http://kanla.zekjur.net/downloads/rpm/perl-AnyEvent-XMPP-0.54-2.el6.noarch.rpm
 wget http://kanla.zekjur.net/downloads/rpm/perl-Object-Event-1.23-5.el6.noarch.rpm
 yum install perl-AnyEvent-XMPP-0.54-2.el6.noarch.rpm
-yum install perl-Object-Event-1.23-5.el6.noarch.rpm</pre>
+yum install perl-Object-Event-1.23-5.el6.noarch.rpm
+yum install perl-AnyEvent-HTTP-2.15-1.el6.noarch.rpm</pre>
 </div></div>
 <div class="paragraph"><p>You can help by
 getting these two packages from Fedora to EPEL :-).</p></div>
@@ -642,13 +644,21 @@ getting these two packages from Fedora to EPEL :-).</p></div>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content monospaced">
-<pre>wget http://kanla.zekjur.net/downloads/rpm/kanla-1.1-2.el6.noarch.rpm
-yum install kanla-1.1-2.el6.noarch.rpm</pre>
+<pre>wget http://kanla.zekjur.net/downloads/rpm/kanla-1.2-1.el6.noarch.rpm
+yum install kanla-1.2-1.el6.noarch.rpm</pre>
 </div></div>
+<div class="paragraph"><p>Note that there currently
+is no init script
+in the RPM.
+If you can provide one,
+please go ahead.
+I personally lost motivation
+after realizing the lack
+of start-stop-daemon in RHEL.</p></div>
 </div>
 </div>
 </div><div id="footer"><a class="bctarget" name="footer"></a>
 <div id="footer-text"><a class="bctarget" name="footer-text"></a>
-Last updated 2013-03-18 14:27:22 CET
+Last updated 2013-03-30 12:57:35 CET
 </div>
 </div></body></html>
