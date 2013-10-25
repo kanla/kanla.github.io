@@ -11,7 +11,7 @@
       are for the latest stable version
       of kanla,
       which is
-      v1.3.
+      v1.4.
       </p>
 
       <h4><a href="/docs/userguide.html">kanla User Guide</a></h4>
