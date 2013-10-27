@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="generator" content="AsciiDoc 8.6.7"><title>Installing kanla on Debian 7.0 wheezy</title><style type="text/css">
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="generator" content="AsciiDoc 8.6.7"><title>Installing kanla on Debian 7 wheezy</title><style type="text/css">
 /* Shared CSS for AsciiDoc xhtml11 and html5 backends */
 
 /* Default font. */
@@ -576,16 +576,17 @@ ul.toc ul.toc {
 	padding-left: 0.5em;
 }
 </style></head><body class="article"><div id="header"><a class="bctarget" name="header"></a>
-<h1>Installing kanla on Debian 7.0 wheezy</h1>
+<h1>Installing kanla on Debian 7 wheezy</h1>
 <span id="author"><a class="bctarget" name="author"></a>Michael Stapelberg</span><br>
 <span id="email" class="monospaced"><a class="bctarget" name="email"></a>&lt;<a href="mailto:michael+kanla@stapelberg.de">michael+kanla@stapelberg.de</a>&gt;</span><br>
-<span id="revdate"><a class="bctarget" name="revdate"></a>May 2013</span>
+<span id="revdate"><a class="bctarget" name="revdate"></a>October 2013</span>
 <div id="toc"><a class="bctarget" name="toc"></a>
   <div id="toctitle"><a class="bctarget" name="toctitle"></a>Table of Contents</div>
   <!--begin-toc-->
 <ul class="toc">
 <li><a href="#_use_debian_testing">1. Use Debian testing?</a>
-<li><a href="#_install_the_kanla_deb">2. Install the kanla deb</a></ul>
+<li><a href="#_use_wheezy_backports">2. Use wheezy-backports</a>
+<li><a href="#_install_the_kanla_deb">3. Install the kanla deb</a></ul>
 <!--end-toc-->
 </div>
 </div><div id="content"><a class="bctarget" name="content"></a>
@@ -593,15 +594,10 @@ ul.toc ul.toc {
 <div class="sectionbody">
 <div class="paragraph"><p>This document explains
 how to install kanla
-on Debian 7.0 wheezy.</p></div>
+on Debian 7 wheezy.</p></div>
 <div class="paragraph"><p>Note that Debian 6.0 squeeze
 does not contain the necessary dependencies,
 so we do not support it.</p></div>
-<div class="paragraph"><p>In case you would like to use kanla with
-Debian 7.0 wheezy
-through wheezy-backports,
-please file a Debian wishlist bugreport
-against the kanla package.</p></div>
 <div class="paragraph"><p>The instructions should also work
 for any other deb-based distribution.</p></div>
 </div>
@@ -615,20 +611,37 @@ you can just
 </div>
 </div>
 <div class="sect1">
-<h2 id="_install_the_kanla_deb"><a class="bctarget" name="_install_the_kanla_deb"></a>2. Install the kanla deb</h2>
+<h2 id="_use_wheezy_backports"><a class="bctarget" name="_use_wheezy_backports"></a>2. Use wheezy-backports</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>In case you cannot use Debian testing,
+you should enable wheezy-backports
+and install kanla from there:</p></div>
+<div class="listingblock">
+<div class="content monospaced">
+<pre>echo 'deb http://http.debian.net/debian wheezy-backports main' \
+  &gt; /etc/apt/sources.list.d/wheezy-backports.list
+apt-get update
+apt-get install kanla</pre>
+</div></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_install_the_kanla_deb"><a class="bctarget" name="_install_the_kanla_deb"></a>3. Install the kanla deb</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>In case you are using
+a deb-based distribution
+other than Debian,
 you may follow these steps:</p></div>
 <div class="listingblock">
 <div class="content monospaced">
 <pre>apt-get install gdebi-core
-wget http://kanla.zekjur.net/downloads/deb/kanla_1.3-1_all.deb
-gdebi kanla_1.3-1_all.deb</pre>
+wget http://kanla.zekjur.net/downloads/deb/kanla_1.4-1_all.deb
+gdebi kanla_1.4-1_all.deb</pre>
 </div></div>
 </div>
 </div>
 </div><div id="footer"><a class="bctarget" name="footer"></a>
 <div id="footer-text"><a class="bctarget" name="footer-text"></a>
-Last updated 2013-05-23 21:50:15 CEST
+Last updated 2013-10-27 10:11:01 CET
 </div>
 </div></body></html>
