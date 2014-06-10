@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="generator" content="AsciiDoc 8.6.7"><title>The kanla User Guide</title><style type="text/css">
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="generator" content="AsciiDoc 8.6.9"><title>The kanla User Guide</title><style type="text/css">
 /* Shared CSS for AsciiDoc xhtml11 and html5 backends */
 
 /* Default font. */
@@ -80,9 +80,15 @@ ul, ol, li > p {
 ul > li     { color: #aaa; }
 ul > li > * { color: black; }
 
-pre {
+.monospaced, code, pre {
+  font-family: "Courier New", Courier, monospace;
+  font-size: inherit;
+  color: navy;
   padding: 0;
   margin: 0;
+}
+pre {
+  white-space: pre-wrap;
 }
 
 #author {
@@ -212,7 +218,7 @@ div.exampleblock > div.content {
 }
 
 div.imageblock div.content { padding-left: 0; }
-span.image img { border-style: none; }
+span.image img { border-style: none; vertical-align: text-bottom; }
 a.image:visited { color: white; }
 
 dl {
@@ -408,12 +414,6 @@ div.unbreakable { page-break-inside: avoid; }
  *
  * */
 
-tt {
-  font-family: "Courier New", Courier, monospace;
-  font-size: inherit;
-  color: navy;
-}
-
 div.tableblock {
   margin-top: 1.0em;
   margin-bottom: 1.5em;
@@ -446,12 +446,6 @@ div.tableblock > table[frame="vsides"] {
  * html5 specific
  *
  * */
-
-.monospaced {
-  font-family: "Courier New", Courier, monospace;
-  font-size: inherit;
-  color: navy;
-}
 
 table.tableblock {
   margin-top: 1.0em;
@@ -532,6 +526,8 @@ body.manpage div.sectionbody {
 @media print {
   body.manpage div#toc { display: none; }
 }
+
+
 @media screen {
   body {
     max-width: 50em; /* approximately 80 characters wide */
@@ -599,6 +595,8 @@ ul.toc ul.toc {
  <li><a href="#_main_configuration">3.3. Main configuration</a>
   <ul class="toc">
   <li><a href="#_send_alerts_to">3.3.1. send_alerts_to</a>
+  <li><a href="#_consecutive_failures">3.3.2. consecutive_failures</a>
+  <li><a href="#_silenced_by">3.3.3. silenced_by</a>
   </ul>
  <li><a href="#_plugin_configuration">3.4. Plugin configuration</a>
  <li><a href="#_plugin_http">3.5. Plugin: http</a>
@@ -925,6 +923,98 @@ with a non-google account.</p></div>
 </td></tr></tbody></table>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_consecutive_failures"><a class="bctarget" name="_consecutive_failures"></a>3.3.2. consecutive_failures</h4>
+<div class="paragraph" id="consecutive_failures"><a class="bctarget" name="consecutive_failures"></a><p>Sometimes,
+the problem detected by a plugin
+is transient.
+As an example,
+maybe the IRC plugin tries to connect
+in precisely the same moment
+in which 5 other connections are made
+and thus the server’s listen queue is full.
+The next check will succeed
+and there was only a brief interruption of service
+from your user’s point of view,
+if at all.
+Human intervention is not necessary,
+so it would be good
+if the human can stay out of the loop entirely.</p></div>
+<div class="paragraph"><p>When setting consecutive_failures
+to any value higher than 1 (the default),
+kanla will inhibit delivering the plugin’s messages
+until that specific failure has occurred
+<span class="monospaced">$consecutive_failures</span> times.</p></div>
+<div class="paragraph"><p>Uniquely identifying a specific failure
+is the responsibility of the plugin,
+see <a href="#example_alert_output">[example_alert_output]</a>.</p></div>
+<div class="paragraph"><p><strong>consecutive_failures example</strong>:</p></div>
+<div class="listingblock">
+<div class="content monospaced">
+<pre>consecutive_failures = 2
+
+&lt;monitor i3wm website&gt;
+    plugin   = http
+    url      = "http://www.i3wm.org/"
+    # Effectively notifies me once www.i3wm.org
+    # is down for at least 60 seconds.
+    interval = 30
+&lt;/monitor&gt;</pre>
+</div></div>
+</div>
+<div class="sect3">
+<h4 id="_silenced_by"><a class="bctarget" name="_silenced_by"></a>3.3.3. silenced_by</h4>
+<div class="paragraph" id="silenced_by"><a class="bctarget" name="silenced_by"></a><p>The <span class="monospaced">silenced_by</span> directive
+has two use cases:</p></div>
+<div class="olist arabic"><ol class="arabic"><li>
+<p>
+Inhibit all alerts when the internet connection is down.
+</p>
+</li><li>
+<p>
+Only send a single alert when an entire machine fails.
+</p>
+</li></ol></div>
+<div class="paragraph"><p>The first use case can be accomplished
+by monitoring a very reliable target
+and using a global <span class="monospaced">silenced_by</span> setting
+on that target’s id:</p></div>
+<div class="paragraph"><p><strong>silenced_by example 1</strong>:</p></div>
+<div class="listingblock">
+<div class="content monospaced">
+<pre>consecutive_failures = 2
+silenced_by = http.http://www.google.com
+
+&lt;monitor i3wm website&gt;
+    plugin = http
+    url    = http://www.i3wm.org/
+&lt;/monitor&gt;
+
+&lt;monitor internet connection check&gt;
+    plugin = http
+    url    = http://www.google.com
+&lt;/monitor&gt;</pre>
+</div></div>
+<div class="admonitionblock">
+<table><tbody><tr><td class="icon">
+<img alt="Note" src="data:image/png;base64, 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">
+</td><td class="content">
+<div class="paragraph"><p>To avoid race conditions,
+it is a good idea to use
+<span class="monospaced">consecutive_failures = 2</span>
+and have <span class="monospaced">interval</span> settings
+that ensure the reliable site is
+checked at least as often as the
+other targets.
+Otherwise,
+the <span class="monospaced">silenced_by</span> setting
+might not have any effect,
+because the error for the reliable site
+might arrive <strong>after</strong>
+the error for the unreliable site.</p></div>
+</td></tr></tbody></table>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_plugin_configuration"><a class="bctarget" name="_plugin_configuration"></a>3.4. Plugin configuration</h3>
@@ -957,6 +1047,14 @@ interval
     that is, plugins don’t <strong>have to</strong> use it
     (e.g. in case the plugin needs a more detailed interval configuration),
     but it is strongly recommended.
+</p>
+</dd><dt class="hdlist1">
+silenced_by
+</dt><dd>
+<p>
+    All plugin output is discarded
+    while the specified id is present.
+    See <a href="#silenced_by">[silenced_by]</a>.
 </p>
 </dd></dl></div>
 </div>
@@ -1432,9 +1530,9 @@ regular expressions should work fine.</p></div>
 </div>
 <div class="sect3">
 <h4 id="_example_alert_output"><a class="bctarget" name="_example_alert_output"></a>5.4.2. Example alert output</h4>
-<div class="paragraph"><p>Each message is represented by a JSON hash.
+<div class="paragraph" id="example_alert_output"><a class="bctarget" name="example_alert_output"></a><p>Each message is represented by a JSON hash.
 Currently,
-only two keys are defined:</p></div>
+only three keys are defined:</p></div>
 <div class="dlist"><dl><dt class="hdlist1">
 severity
 </dt><dd>
@@ -1452,13 +1550,27 @@ the configured send_alerts_to destination.
 Make this as helpful as possible,
 but keep it as verbose as necessary.
 </p>
+</dd><dt class="hdlist1">
+id
+</dt><dd>
+<p>
+A unique id
+for this specific problem.
+Used in order to suppress messages
+unless the problem persists.
+Should start with
+the plugin name,
+e.g.
+http.http://i3wm.org/.404
+</p>
 </dd></dl></div>
 <div class="paragraph"><p><strong>Example alert JSON output</strong>:</p></div>
 <div class="listingblock">
 <div class="content monospaced">
 <pre>{
  "severity": "critical",
- "message": "This will be sent via Jabber"
+ "message": "This will be sent via Jabber",
+ "id": "doc.userguide.example"
 }</pre>
 </div></div>
 </div>
@@ -1467,6 +1579,6 @@ but keep it as verbose as necessary.
 </div>
 </div><div id="footer"><a class="bctarget" name="footer"></a>
 <div id="footer-text"><a class="bctarget" name="footer-text"></a>
-Last updated 2013-08-19 20:05:44 CEST
+Last updated 2013-11-13 23:27:35 CET
 </div>
 </div></body></html>
