@@ -1,0 +1,5 @@
+{% if page.group == include.name %}
+<li class="active"><a href="{{include.url}}">{{include.name}}</a></li>
+{% else %}
+<li><a href="{{include.url}}">{{include.name}}</a></li>
+{% endif %}

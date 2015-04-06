@@ -47,33 +47,22 @@
 
   <div class="masthead">
     <ul class="nav nav-pills pull-right">
-<%
-	menu = [
-		[ "/", "Intro" ],
-		[ "/docs/", "Docs" ],
-		[ "/dev/", "Devel" ],
-		[ "/contact/", "Contact" ],
-	]
-%>
-% for link, title in menu:
-				<li
-% if self.attr.section == title.lower():
-				class="active"
-% endif
-				><a href="${link}">${title}</a></li>
-% endfor
+{% include menulink.html name="Intro" url="/" %}
+{% include menulink.html name="Docs" url="/docs/" %}
+{% include menulink.html name="Devel" url="/dev/" %}
+{% include menulink.html name="Contact" url="/contact/" %}
     </ul>
     <h3>kanla</h3>
   </div>
 
   <hr>
 
-  ${next.body()}
+  {{ content }}
 
   <hr>
 
   <footer>
-  © 2012-2013 Michael Stapelberg, <a href="/impress.html">Impressum</a>
+  © 2012-2015 Michael Stapelberg, <a href="/impress.html">Impressum</a>
   </footer>
 </div>
 </body>
